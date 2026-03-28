@@ -7,6 +7,8 @@
 
 import Foundation
 
+#if os(iOS) || targetEnvironment(macCatalyst)
+
 @available(iOS 10.0, macOS 10.15, *)
 @available(tvOS, unavailable)
 @available(macOS, unavailable)
@@ -36,3 +38,5 @@ extension Camera {
         self.audioQueueCaptureSession = nil
     }
 }
+
+#endif

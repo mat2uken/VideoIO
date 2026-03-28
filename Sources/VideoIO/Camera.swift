@@ -400,7 +400,7 @@ public class Camera {
     
     internal var photoCaptureDelegateHandlers: [AnyObject] = []
     
-    @available(macOS, unavailable)
+    #if os(iOS) || targetEnvironment(macCatalyst)
     internal var audioQueueCaptureSession: AudioQueueCaptureSession?
+    #endif
 }
-
